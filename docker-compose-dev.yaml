@@ -7,8 +7,8 @@ services:
       - "27017:27017"
     networks:
       - mern-app
-    # volumes:
-    #   - mongo-data:/data/db
+    volumes:
+      - 'mongo-data:/data/db'
   mongo-express:
     image: mongo-express
     restart: always
@@ -48,6 +48,6 @@ services:
 networks:
   mern-app:
     driver: bridge
-# volumes:
-#   mongo-data:
-#     driver: local
+volumes:
+  mongo-data:
+    driver: local
